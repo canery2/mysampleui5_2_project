@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>OpenUI5 Todo App</title>
-	<link rel="icon" href="data:,">
-	<script id="sap-ui-bootstrap"
-		src="resources/sap-ui-core.js"
-		data-sap-ui-libs="sap.m"
-		data-sap-ui-xx-wait-for-theme="true"
-		data-sap-ui-theme="sap_horizon"
-		data-sap-ui-resource-roots='{
-			"sap.ui.demo.todo": "./"
-		}'
-		data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
-		data-sap-ui-compat-version="edge"
-		data-sap-ui-async="true">
-	</script>
+	<title>Walkthrough</title>
+	<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m" data-sap-ui-compatVersion="edge"
+		data-sap-ui-preload="async" data-sap-ui-resourceroots='{"sample-app": "./"}'>
+		</script>
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			// sap.ui.xmlview({
+			//	viewName : "sample-app.view.App"
+			//}).placeAt("content");  
+			//new sap.ui.core.ComponentContainer({
+			//		name : "sample-app"
+			//}).placeAt("content");
+
+			new sap.m.Shell({
+				app: new sap.ui.core.ComponentContainer({
+					name: "sample-app",
+					height: "100%"
+				})
+			}).placeAt("content");
+		});
+	</script> 
 </head>
 
-<body class="sapUiBody">
-	<div data-sap-ui-component data-name="sap.ui.demo.todo" data-id="container" data-settings='{"id" : "todo"}'></div>
+<body class="sapUiBody" id="content">
 </body>
+
 </html>
