@@ -18,3 +18,5 @@ server:
         excludePatterns:
           - "resources/"
           - "test/"
+
+

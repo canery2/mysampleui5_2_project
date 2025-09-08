@@ -1,70 +1,50 @@
 {
-	"_version": "1.61.0",
+	"_version": "1.60.0",
 	"sap.app": {
-		"id": "sample-app",
+		"id": "ui5.databinding",
 		"type": "application",
-		"i18n": "i18n/i18n.properties",
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
 		"applicationVersion": {
-	  	"version": "1.0.0"
-	},
-		"dataSources": {
-			"invoiceRemote": {
-				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
-			}
+			"version": "1.0.0"
 		}
 	},
 	"sap.ui": {
-	"_version": "1.1.0",
-	"technology": "UI5",
-	"deviceTypes": {
-	  "desktop": true,
-	  "tablet": true,
-	  "phone": true
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
 	},
-	"supportedThemes": [
-	  "sap_bluecrystal"
-	]
-  },
 	"sap.ui5": {
 		"dependencies": {
-			"minUI5Version": "1.121.0",
+			"minUI5Version": "1.120.0",
 			"libs": {
-				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.f": {}
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
 			}
 		},
-		"rootView": {
-			"viewName": "sample-app.view.App",
-			"type": "XML",
-			"id": "app"
-		},
-		
 		"models": {
+			"": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "./model/data.json"
+			},
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "sample-app.i18n.i18n",
-					"async": true
+					"bundleName": "sample-app-copy.i18n.i18n",
+					"supportedLocales": [
+						"",
+						"de"
+					],
+					"fallbackLocale": ""
 				}
-			},
-			"invoice" : {
-				"dataSource": "invoiceRemote"
 			}
 		},
-		"resources": {
-			"css": [
-				{
-					"uri": "css/styles.css"
-				}
-			]
+		"rootView": {
+			"viewName": "sample-app-copy.view.App",
+			"type": "XML",
+			"id": "app"
 		}
 	}
 }
