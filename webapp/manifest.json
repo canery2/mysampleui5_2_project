@@ -65,35 +65,6 @@
 					"uri": "css/styles.css"
 				}
 			]
-		}, 
-	"routing": {
-	  "config": {
-		"routerClass": "sap.m.routing.Router",
-		"viewType": "XML",
-		"viewPath": "sample-app.view",
-		"controlId": "app",
-		"controlAggregation": "pages"
-	  },
-	  "routes": [
-		{
-		  "pattern": "",
-		  "name": "overview",
-		  "target": "overview"
-		},
-		{
-		  "pattern": "detail/{invoicePath}",
-		  "name": "detail",
-		  "target": "detail"
 		}
-	  ],
-	  "targets": {
-		"overview": {
-		  "viewName": "Overview"
-		},
-		"detail": {
-		  "viewName": "Detail"
-		}
-	  }
-	}
 	}
 }

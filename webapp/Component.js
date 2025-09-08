@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 sap.ui.define(
 	[
 		"sap/ui/core/UIComponent",
@@ -13,37 +14,7 @@ sap.ui.define(
 			},
 			init: function () {
 				// call the init function of the parent
-				UIComponent.prototype.init.apply(this, arguments);
-
-				// set data model
-				const oData = {
-					recipient: {
-						name: "World",
-					},
-				};
-				const oModel = new JSONModel(oData);
-				this.setModel(oModel);
-				// disable batch grouping for v2 API of the northwind service
-				this.getModel("invoice").setUseBatch(false);
-				// set device model
-				const oDeviceModel = new JSONModel(Device);
-				oDeviceModel.setDefaultBindingMode("OneWay");
-				this.setModel(oDeviceModel, "device");
-				// set dialog
-				this.helloDialog = new HelloDialog();
-				// create the views based on the url/hash
-				this.getRouter().initialize();
-			},
-			getContentDensityClass: function () {
-				if (!this._sContentDensityClass) {
-					if (!sap.ui.Device.support.touch) {
-						this._sContentDensityClass = "sapUiSizeCompact";
-					} else {
-						this._sContentDensityClass = "sapUiSizeCozy";
-					}
-				}
-				return this._sContentDensityClass;
-			},
+			}
 		});
 	}
 );
