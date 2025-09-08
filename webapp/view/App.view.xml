@@ -14,9 +14,9 @@
           <Label class="sapUiSmallMargin" text="{i18n>address}:" />
           <Text class="sapUiSmallMargin" 
                 text="{/address/street}\n{/address/zip} {/address/city}\n{/address/country}" 
-                width="200px" />
+                width="230px" />
         </l:VerticalLayout>   
     </content>
   </Panel>
 
-</mvc:View>
+</mvc:View> 
